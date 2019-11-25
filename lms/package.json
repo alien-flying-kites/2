@@ -1,0 +1,74 @@
+{
+  "name": "lms",
+  "version": "1.0.0",
+  "description": "This is Open AI Lab's lab management system",
+  "private": true,
+  "egg": {
+    "typescript": true,
+    "declarations": true,
+    "require": [
+      "egg-ts-helper/register"
+    ]
+  },
+  "scripts": {
+    "start": "egg-scripts start --sticky --daemon --title=egg-server-lms  --workers=1 --ignore-stderr",
+    "stop": "egg-scripts stop --title=egg-server-lms",
+    "dev": "egg-bin dev --sticky -r egg-ts-helper/register",
+    "debug": "egg-bin debug -r egg-ts-helper/register",
+    "debug-test": "npm run test-local -- --inspect",
+    "test-local": "egg-bin test -r egg-ts-helper/register",
+    "test": "npm run lint -- --fix && npm run test-local",
+    "cov": "egg-bin cov",
+    "tsc": "ets && tsc -p tsconfig.json",
+    "ci": "npm run lint && npm run cov && npm run tsc",
+    "autod": "autod",
+    "lint": "tslint --project . -c tslint.json",
+    "clean": "ets clean"
+  },
+  "dependencies": {
+    "@types/ws": "^6.0.1",
+    "egg": "^2.18.0",
+    "egg-cors": "^2.1.2",
+    "egg-jwt": "^3.1.6",
+    "egg-mongoose": "^3.2.0",
+    "egg-scripts": "^2.6.0",
+    "egg-socket.io": "^4.1.5",
+    "mongoose": "^5.5.12",
+    "node-cmd": "^3.0.0",
+    "ws": "^7.0.0",
+    "xlsx": "^0.14.2"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^8.3.2",
+    "@types/mocha": "^2.2.40",
+    "@types/mongoose": "^5.3.20",
+    "@types/node": "^7.0.12",
+    "@types/socket.io": "^2.1.2",
+    "@types/supertest": "^2.0.0",
+    "autod": "^3.0.1",
+    "autod-egg": "^1.1.0",
+    "egg-bin": "^4.12.3",
+    "egg-ci": "^1.8.0",
+    "egg-mock": "^3.16.0",
+    "egg-ts-helper": "^1.22.3",
+    "tslib": "^1.9.0",
+    "tslint": "^5.0.0",
+    "tslint-config-egg": "^1.0.0",
+    "typescript": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=8.9.0"
+  },
+  "ci": {
+    "version": "8"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "eslintIgnore": [
+    "coverage"
+  ],
+  "author": "Danny Zhan",
+  "license": "MIT"
+}

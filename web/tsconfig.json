@@ -1,0 +1,15 @@
+// tsconfig.json
+{
+    "compilerOptions": {
+      "sourceMap": true,
+      "target": "es2015",
+      "strict": true,
+      "experimentalDecorators": true,
+      "noImplicitAny": false,
+      "module": "es2015",
+      "moduleResolution": "node"
+    },
+    "include": [
+      "./src/**/*"
+    ]
+  }
